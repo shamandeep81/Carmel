@@ -2,9 +2,21 @@ import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import { Button } from "../styles/Button";
+import  { useGlobalContext } from "../context";
+
+
+
+
+
+
 
 const HeroSection = ({name, image}) => {
-    return <Wrapper>
+
+  
+  const firstName = useGlobalContext();
+    return (
+    
+    <Wrapper>
 
         <div className="container grid grid-two-column">
 
@@ -13,7 +25,7 @@ const HeroSection = ({name, image}) => {
                 <p className="hero-top-data"> THIS IS ME</p>
                 <h1 className="hero-heading">{name}</h1>
 
-                <p className="hero-para">I'm a Web Developer. I have passion in creating websites and learing new technologies.</p>
+                <p className="hero-para">I'm {firstName}. I have passion in creating websites and learing new technologies.</p>
                 <Button className="btn hireme-btn">
                     <NavLink to="/Contact">Hire me</NavLink>
                 </Button>
@@ -32,6 +44,7 @@ const HeroSection = ({name, image}) => {
 
 
     </Wrapper>
+    )
 };
 
 const Wrapper = styled.section`
