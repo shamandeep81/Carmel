@@ -7,13 +7,13 @@ import  { useGlobalContext } from "../context";
 
 
 
+ 
 
 
-
-const HeroSection = ({name, image}) => {
+const HeroSection = () => {
 
   
-  const firstName = useGlobalContext();
+  const { name, image } = useGlobalContext();
     return (
     
     <Wrapper>
@@ -25,7 +25,7 @@ const HeroSection = ({name, image}) => {
                 <p className="hero-top-data"> THIS IS ME</p>
                 <h1 className="hero-heading">{name}</h1>
 
-                <p className="hero-para">I'm {firstName}. I have passion in creating websites and learing new technologies.</p>
+                <p className="hero-para">I'm {name}. I have passion in creating websites and learing new technologies.</p>
                 <Button className="btn hireme-btn">
                     <NavLink to="/Contact">Hire me</NavLink>
                 </Button>
@@ -35,7 +35,7 @@ const HeroSection = ({name, image}) => {
 
             <div className="section-hero-image">
                 <picture>
-                    <img src={image} alt="mouse" srcset="" />
+                    <img src={image} alt="mouse" className="hero-img" />
 
                 </picture>
 
@@ -44,7 +44,7 @@ const HeroSection = ({name, image}) => {
 
 
     </Wrapper>
-    )
+    );
 };
 
 const Wrapper = styled.section`
@@ -95,4 +95,4 @@ picture {
 `;
 
 
-export default HeroSection
+export default HeroSection;
